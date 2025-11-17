@@ -13,7 +13,7 @@ export async function onRequestPost({ request, env }) {
     }
 
     // sanitize minimal (trimming). For more, use sanitizer libs if needed.
-    const sql = `INSERT INTO submissions (name, email, message, whatsapp) VALUES (?, ?, ?, ?)`;
+    const sql = `INSERT INTO main.submissions (name, email, message, whatsapp) VALUES (?, ?, ?, ?)`;
     // env.DB adalah binding D1 yang kamu set di Cloudflare
     const res = await env.DB.prepare(sql).bind(name, email, message, whatsapp).run();
 
