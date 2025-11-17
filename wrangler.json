@@ -1,7 +1,9 @@
 {
   "name": "appappid",
   "compatibility_date": "2025-10-08",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "main": "./dist/_worker.js/index.js",
   "assets": {
     "directory": "./dist",
@@ -10,5 +12,19 @@
   "observability": {
     "enabled": true
   },
-  "upload_source_maps": true
+  "upload_source_maps": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "form-pesanan",
+      "database_id": "b7436912-6bf4-4a94-980e-051c3e6e381f"
+    }
+  ],
+  "secrets_store_secrets": [
+    {
+      "store_id": "e7a55c59165e4514b92c9efd1a683937",
+      "binding": "SECRET",
+      "secret_name": "input-form-appappid"
+    }
+  ]
 }
