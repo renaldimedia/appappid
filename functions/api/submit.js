@@ -6,15 +6,16 @@ export async function onRequestPost({ request, env }) {
     const name = (body.name || '').trim();
     const email = (body.email || '').trim();
     const message = (body.message || '').trim();
+    const whatsapp = (body.whatsapp || '').trim();
 
     if (!name || !email) {
       return new Response(JSON.stringify({ error: 'Nama & email wajib.' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
     }
 
     // sanitize minimal (trimming). For more, use sanitizer libs if needed.
-    const sql = `INSERT INTO submissions (name, email, message) VALUES (?, ?, ?)`;
+    const sql = `INSERT INTO submissions (name, email, message, whatsapp) VALUES (?, ?, ?, ?)`;
     // env.DB adalah binding D1 yang kamu set di Cloudflare
-    const res = await env.DB.prepare(sql).bind(name, email, message).run();
+    const res = await env.DB.prepare(sql).bind(name, email, message, whatsapp).run();
 
     // res mungkin berisi lastInsertRowid / success flag tergantung runtime
     return new Response(JSON.stringify({ success: true, id: res?.lastInsertRowid ?? null }), { status: 200, headers: { 'Content-Type': 'application/json' } });
