@@ -3,6 +3,10 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+function getContact(name){
+	alert(name)
+}
 ---
 
 <!doctype html>
@@ -416,11 +420,5 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			</div>
 		</section>
 		<Footer />
-
-		<script>
-			function getContact(name){
-				alert(name)
-			}
-		</script>
 	</body>
 </html>
