@@ -4,13 +4,13 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 import cloudflare from "@astrojs/cloudflare";
-
+import icon from "astro-icon";
 import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://dev.appapp.id",
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap(), icon()],
 
   adapter: cloudflare({
     platformProxy: {
