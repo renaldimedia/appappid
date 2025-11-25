@@ -4,7 +4,12 @@ export default function WhatsappButton() {
         try {
             const res = await fetch(`/api/settings?name=whatsapp`);
             const json = await res.json();
-            console.log(json)
+
+            if(json.success){
+                window.open(json.data, "tab");
+            }else{
+                alert("Whatsapp tidak tersedia!")
+            }
         } catch (error) {
             console.log(error)
         }

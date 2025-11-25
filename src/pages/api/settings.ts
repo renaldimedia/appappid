@@ -12,7 +12,9 @@ export const GET: APIRoute = async ({ url, locals }) => {
             "SELECT setting_value from settings WHERE setting_name = ?"
         ).bind(name).run();
 
-        return new Response(JSON.stringify({ success: true, data }), {
+        let result = data?.results?.[0]?.setting_value ?? false
+
+        return new Response(JSON.stringify({ success: true, data: result }), {
             status: 200,
             headers: { "Content-Type": "application/json" },
         });

@@ -3,7 +3,16 @@ export default function EmailButton() {
         try {
             const res = await fetch(`/api/settings?name=email`);
             const json = await res.json();
-            console.log(json)
+            if (json.success) {
+                const email = json.data;
+                const subject = "Need Help";
+                const body = "Halo, saya ingin bertanya...";
+
+                window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            } else {
+                alert("Email tidak tersedia!")
+            }
         } catch (error) {
             console.log(error)
         }
