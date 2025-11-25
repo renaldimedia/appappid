@@ -1,6 +1,12 @@
 export default function EmailButton() {
-    function getContact(type) {
-        window.alert(type)
+    async function getContact(type) {
+        try {
+            const res = await fetch(`/api/settings?name=email`);
+            const json = await res.json();
+            console.log(json)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (<button

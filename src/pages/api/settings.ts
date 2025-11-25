@@ -9,7 +9,7 @@ export const GET: APIRoute = async ({ url, locals }) => {
         const name = url.searchParams.get('name');
 
         const data = await env.DB.prepare(
-            "SELECT setting_value from settings WHERE setting_key = ?"
+            "SELECT setting_value from settings WHERE setting_name = ?"
         ).bind(name).run();
 
         return new Response(JSON.stringify({ success: true, data }), {
