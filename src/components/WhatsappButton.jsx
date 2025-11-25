@@ -1,9 +1,9 @@
 import getSettings from "../lib/getSetting";
 export default function WhatsappButton() {
     async function getContact(type) {
-        window.alert(type)
-        let set = await getSettings(type)
-        console.log({set})
+         const res = await fetch(`/api/settings?name=whatsapp`);
+        const json = await res.json();
+        console.log({json})
     }
 
     return (<button
