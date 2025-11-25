@@ -42,9 +42,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 							class="inline-flex text-white bg-[#8B5CF6] border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
 							>Ok, saya mau!</a
 						>
-						<button
+						<a
+							href="#contact"
 							class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
-							>Langsung kontak admin</button
+							>Langsung kontak admin</a
 						>
 					</div>
 				</div>
@@ -311,6 +312,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 					class="flex flex-col md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto md:text-left text-center text-white"
 				>
 					<h2
+						id="contact"
 						class="text-4xl text-white tracking-widest font-medium title-font mb-1"
 					>
 						KONSULTASI DULU?
@@ -322,12 +324,56 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 				<div
 					class="flex md:ml-auto md:mr-0 mx-auto items-center flex-col md:flex-row space-x-4 gap-4"
 				>
-					<WhatsappButton client:load></WhatsappButton>
-					<EmailButton client:load></EmailButton>
+					<WhatsappButton client:load />
+					<EmailButton client:load />
 				</div>
 			</div>
 		</section>
-		<Footer />
+		<div
+			id="turnstile-overlay"
+			style="
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+"
+		>
+			<div id="turnstile-widget"></div>
+		</div>
 
+		<Footer />
+		<script
+			src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+			async
+			defer></script>
+
+		<script is:inline>
+			const SITE_KEY = "0x4AAAAAACC07i0DwnwMHmqp"; // public key
+
+			// cek existing token
+			const existing = localStorage.getItem("cf-turnstile");
+			if (existing) {
+				document.getElementById("turnstile-overlay").style.display =
+					"none";
+			}
+
+			window.onload = () => {
+				turnstile.render("#turnstile-widget", {
+					sitekey: SITE_KEY,
+					callback: function (token) {
+						localStorage.setItem("cf-turnstile", token);
+						document.getElementById(
+							"turnstile-overlay",
+						).style.display = "none";
+					},
+					"error-callback": function () {
+						console.log("Error Turnstile");
+					},
+				});
+			};
+		</script>
 	</body>
 </html>

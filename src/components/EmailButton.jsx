@@ -20,7 +20,7 @@ export default function EmailButton() {
 
     return (<button
         onClick={() => getContact("email")}
-        className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none w-[200px]"
+        className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none w-[200px] cursor-pointer"
     >
         <svg
             viewBox="0 0 24 24"

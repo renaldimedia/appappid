@@ -17,7 +17,8 @@ export default function WhatsappButton() {
 
     return (<button
         onClick={() => getContact("whatsapp")}
-        className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none w-[200px]"
+        className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none w-[200px] cursor-pointer"
+        title="Contact me by whatsapp"
     >
         <svg
             viewBox="0 0 48 48"
