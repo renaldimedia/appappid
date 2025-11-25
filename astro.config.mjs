@@ -7,10 +7,12 @@ import cloudflare from "@astrojs/cloudflare";
 import icon from "astro-icon";
 import tailwindcss from "@tailwindcss/vite";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://dev.appapp.id",
-  integrations: [mdx(), sitemap(), icon()],
+  integrations: [mdx(), sitemap(), icon(), react()],
 
   adapter: cloudflare({
     platformProxy: {
