@@ -1,14 +1,22 @@
-import getSettings from "../lib/getSetting";
+import Swal from "sweetalert2";
 export default function WhatsappButton() {
     async function getContact(type) {
         try {
             const res = await fetch(`/api/settings?name=whatsapp`);
             const json = await res.json();
 
-            if(json.success){
+            if (json.success) {
                 window.open(json.data, "tab");
-            }else{
-                alert("Whatsapp tidak tersedia!")
+            } else {
+                Swal.fire({
+                    toast: true,
+                    title: "Terjadi kesalahan!",
+                    text: 'Whatsapp tidak tersedia!',
+                    timer: 3000,
+                    position: 'top-right',
+                    showConfirmButton: false,
+                    icon: "error"
+                })
             }
         } catch (error) {
             console.log(error)

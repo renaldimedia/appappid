@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 export default function EmailButton() {
     async function getContact(type) {
         try {
@@ -11,7 +12,14 @@ export default function EmailButton() {
                 window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
             } else {
-                alert("Email tidak tersedia!")
+                Swal.fire({
+                    toast: true,
+                    title: "Email tidak tersedia!",
+                    timer: 3000,
+                    position: 'top-right',
+                    showConfirmButton: false,
+                     icon: "error"
+                })
             }
         } catch (error) {
             console.log(error)
@@ -21,6 +29,7 @@ export default function EmailButton() {
     return (<button
         onClick={() => getContact("email")}
         className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none w-[200px] cursor-pointer"
+        title="Contact me by email"
     >
         <svg
             viewBox="0 0 24 24"
