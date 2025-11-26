@@ -3,14 +3,14 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header>
-	<nav>
+<header class="py-4">
+	<nav class="py-4">
 		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
+		<!-- <div class="internal-links"> -->
 			<!-- <HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink> -->
-		</div>
+		<!-- </div> -->
 		<div class="social-links">
 			<a href="https://www.linkedin.com/company/appappid" target="_blank">
 			<span class="sr-only">Follow AppAppID on Linkedin</span>
@@ -66,5 +66,8 @@ import { SITE_TITLE } from '../consts';
 		.social-links {
 			display: none;
 		}
+		nav {
+		justify-content: center;
+	}
 	}
 </style>
