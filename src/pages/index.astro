@@ -537,7 +537,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 "
 			>
 				<div class="text-xl text-center w-full">
-					<p>Mohon tunggu, sedang memverikasi permintaaan Anda, hanya memastikan bahwa anda bukan robot.</p>
+					<p>
+						Mohon tunggu, sedang memverikasi permintaaan Anda, hanya
+						memastikan bahwa anda bukan robot.
+					</p>
 				</div>
 				<div id="turnstile-widget"></div>
 			</div>
@@ -574,5 +577,20 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 				};
 			</script>
 		</section>
+
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-CC5PWQ3HGF"
+			is:inline></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-CC5PWQ3HGF");
+		</script>
 	</body>
 </html>
