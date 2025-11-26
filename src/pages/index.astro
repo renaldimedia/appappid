@@ -6,12 +6,15 @@ import WhatsappButton from "../components/WhatsappButton.jsx";
 import EmailButton from "../components/EmailButton.jsx";
 import FastworkButton from "../components/FastworkButton.jsx";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { GoogleAnalytics } from 'astro-google-analytics';
+
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<GoogleAnalytics id="G-CC5PWQ3HGF" />
 	</head>
 	<body class="scroll-smooth">
 		<Header />
@@ -578,19 +581,5 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			</script>
 		</section>
 
-		<!-- Google tag (gtag.js) -->
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-CC5PWQ3HGF"
-			is:inline></script>
-		<script is:inline>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag("js", new Date());
-
-			gtag("config", "G-CC5PWQ3HGF");
-		</script>
 	</body>
 </html>
