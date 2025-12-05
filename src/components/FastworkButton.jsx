@@ -16,6 +16,7 @@ export default function FastworkButton() {
             const json = await res.json();
 
             if (json.success) {
+                Swal.close();
                 window.open(json.data, "tab");
             } else {
                 Swal.close();
