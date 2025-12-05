@@ -8,13 +8,15 @@ import FastworkButton from "../components/FastworkButton.jsx";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { GoogleAnalytics } from "astro-google-analytics";
 import OrderButton from "../components/OrderButton.jsx";
+import GotoButton from "../components/ButtonGoto.jsx";
+import ComponentShow from "../components/TrackerComponent.jsx";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<GoogleAnalytics id="G-CC5PWQ3HGF" />
+		<GoogleAnalytics id={import.meta.env.APPAPPID_GA} />
 	</head>
 	<body class="scroll-smooth">
 		<Header />
@@ -41,21 +43,27 @@ import OrderButton from "../components/OrderButton.jsx";
 						otomasi, dan pengalaman belanja modern.
 					</p>
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-						<a
+						<GotoButton
+							client:load
 							href="#features"
-							class="text-center w-full inline-flex justify-center text-white bg-[#8B5CF6] border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-							>Ok, saya mau!</a
-						>
-						<a
-							href="#pricing"
-							class="text-center w-full inline-flex justify-center bg-[#483e97] text-white border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
-							>Cek Harga</a
-						>
-						<a
+							eventName="click-feature-button"
+							label="Ok, saya mau!"
+							className="text-center w-full inline-flex justify-center text-white bg-[#8B5CF6] border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+						/>
+						<GotoButton
+							client:load
 							href="#contact"
-							class="text-center w-full inline-flex justify-center text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
-							>Konsultasi Dulu</a
-						>
+							eventName="click-consultation-button"
+							label="Konsultasi Dulu"
+							className="text-center w-full inline-flex justify-center text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
+						/>
+						<GotoButton
+							client:load
+							href="#pricing"
+							eventName="click-pricing-button"
+							label="Cek Harga"
+							className="inline-flex text-center w-full justify-center bg-[#483e97] text-white border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
+						/>
 					</div>
 				</div>
 				<div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
@@ -665,7 +673,11 @@ import OrderButton from "../components/OrderButton.jsx";
 								</ul>
 							</p>
 							<br />
-							<OrderButton client:load label="Pesan Sekarang!" message="Hai! saya tertarik dengan website Starter untuk bisnis saya!" />
+							<OrderButton
+								client:load
+								label="Pesan Sekarang!"
+								message="Hai! saya tertarik dengan website Starter untuk bisnis saya!"
+							/>
 						</div>
 					</div>
 					<div class="p-4 xl:w-1/3 md:w-1/2 w-full">
@@ -781,7 +793,11 @@ import OrderButton from "../components/OrderButton.jsx";
 								</span>Bisa dicustom dengan plugin/theme sendiri
 							</p>
 
-							<OrderButton client:load label="Pesan Sekarang!" message="Hai! saya tertarik dengan website Standar untuk bisnis saya!" />
+							<OrderButton
+								client:load
+								label="Pesan Sekarang!"
+								message="Hai! saya tertarik dengan website Standar untuk bisnis saya!"
+							/>
 						</div>
 					</div>
 					<div class="p-4 xl:w-1/3 md:w-1/2 w-full">
@@ -819,13 +835,18 @@ import OrderButton from "../components/OrderButton.jsx";
 								</span>Web Sesuai Kebutuhan Bisnis Anda!
 							</p>
 
-							<OrderButton client:load label="Pesan Sekarang!" message="Hai! saya tertarik dengan website Big untuk bisnis saya!" />
+							<OrderButton
+								client:load
+								label="Pesan Sekarang!"
+								message="Hai! saya tertarik dengan website Big untuk bisnis saya!"
+							/>
 						</div>
 					</div>
 				</div>
 				<div class="flex flex-col"></div>
 			</div>
 		</section>
+		<ComponentShow eventName="view-consultation-section" client:load>
 		<section class="body-font bg-[#a467c1]">
 			<div
 				class="container px-5 lg:py-18 py-12 mx-auto flex items-center md:flex-row flex-col"
@@ -852,6 +873,7 @@ import OrderButton from "../components/OrderButton.jsx";
 				</div>
 			</div>
 		</section>
+		</ComponentShow>
 
 		<Footer />
 	</body>

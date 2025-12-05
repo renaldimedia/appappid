@@ -1,10 +1,11 @@
 import Swal from "sweetalert2";
 import { useState } from "react";
-
+import clarity from "../lib/clarity";
 export default function OrderButton({ label = "Pesan Sekarang", message = "Saya tertarik untuk memesan layanan pembuatan website." }) {
     const [loading, setLoading] = useState(false);
 
     async function getContact(messageToSend) {
+        clarity.event("click-order-button");
 
         try {
             setLoading(true);

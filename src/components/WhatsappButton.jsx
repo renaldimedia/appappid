@@ -1,8 +1,11 @@
 import Swal from "sweetalert2";
+import clarity from "../lib/clarity";
+
 
 export default function WhatsappButton() {
 
     async function getContact(type) {
+        clarity.event("click-whatsapp-button");
         try {
             Swal.fire({
                 title: "Mohon tunggu...",

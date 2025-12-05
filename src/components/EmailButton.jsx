@@ -1,16 +1,19 @@
 import Swal from "sweetalert2";
+import clarity from "../lib/clarity";
 export default function EmailButton() {
     async function getContact(type) {
+                clarity.event("click-email-button");
+
         try {
-             Swal.fire({
-                            title: "Mohon tunggu...",
-                            html: "Sedang memproses",
-                            allowOutsideClick: false,
-                            allowEscapeKey: false,
-                            didOpen: () => {
-                                Swal.showLoading();
-                            }
-                        });
+            Swal.fire({
+                title: "Mohon tunggu...",
+                html: "Sedang memproses",
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
 
             const res = await fetch(`/api/settings?name=email`);
             const json = await res.json();
@@ -30,7 +33,7 @@ export default function EmailButton() {
                     timer: 3000,
                     position: 'top-right',
                     showConfirmButton: false,
-                     icon: "error"
+                    icon: "error"
                 })
             }
         } catch (error) {
