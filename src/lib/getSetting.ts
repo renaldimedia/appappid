@@ -9,3 +9,4 @@ export default async function getSettings(name: string){
         console.log(error)
     }
 }
+

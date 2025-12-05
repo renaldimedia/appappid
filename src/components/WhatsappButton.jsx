@@ -1,13 +1,25 @@
 import Swal from "sweetalert2";
+
 export default function WhatsappButton() {
+
     async function getContact(type) {
         try {
+            Swal.fire({
+                title: "Mohon tunggu...",
+                html: "Sedang memproses",
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
             const res = await fetch(`/api/settings?name=whatsapp`);
             const json = await res.json();
 
             if (json.success) {
                 window.open(json.data, "tab");
             } else {
+                Swal.close();
                 Swal.fire({
                     toast: true,
                     title: "Terjadi kesalahan!",
@@ -20,7 +32,8 @@ export default function WhatsappButton() {
             }
         } catch (error) {
             console.log(error)
-        }
+            Swal.close();
+        } 
     }
 
     return (<button

@@ -3,23 +3,35 @@ import Swal from 'sweetalert2'
 export default function FastworkButton() {
     async function getContact() {
         try {
+            Swal.fire({
+                title: "Mohon tunggu...",
+                html: "Sedang memproses",
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
             const res = await fetch(`/api/settings?name=fastwork`);
             const json = await res.json();
+
             if (json.success) {
                 window.open(json.data, "tab");
             } else {
+                Swal.close();
                 Swal.fire({
                     toast: true,
                     title: "Terjadi kesalahan!",
-                    text: 'Fastwork tidak tersedia!',
+                    text: 'Link Fastwork tidak tersedia!',
                     timer: 3000,
                     position: 'top-right',
                     showConfirmButton: false,
-                     icon: "error"
+                    icon: "error"
                 })
             }
         } catch (error) {
             console.log(error)
+            Swal.close();
         }
     }
 

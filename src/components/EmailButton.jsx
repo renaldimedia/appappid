@@ -2,9 +2,20 @@ import Swal from "sweetalert2";
 export default function EmailButton() {
     async function getContact(type) {
         try {
+             Swal.fire({
+                            title: "Mohon tunggu...",
+                            html: "Sedang memproses",
+                            allowOutsideClick: false,
+                            allowEscapeKey: false,
+                            didOpen: () => {
+                                Swal.showLoading();
+                            }
+                        });
+
             const res = await fetch(`/api/settings?name=email`);
             const json = await res.json();
             if (json.success) {
+                Swal.close();
                 const email = json.data;
                 const subject = "Need Help";
                 const body = "Halo, saya ingin bertanya...";
@@ -12,6 +23,7 @@ export default function EmailButton() {
                 window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
             } else {
+                Swal.close();
                 Swal.fire({
                     toast: true,
                     title: "Email tidak tersedia!",
@@ -22,6 +34,7 @@ export default function EmailButton() {
                 })
             }
         } catch (error) {
+            Swal.close();
             console.log(error)
         }
     }
