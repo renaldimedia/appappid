@@ -11,7 +11,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://dev.appapp.id",
+  site: "https://appapp.id",
   integrations: [mdx(), sitemap(), icon(), react()],
 
   adapter: cloudflare({
