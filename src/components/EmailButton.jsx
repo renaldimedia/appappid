@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import clarity from "../lib/clarity";
 export default function EmailButton() {
     async function getContact(type) {
-                clarity.event("click-email-button");
+                // clarity.event("click-email-button");
 
         try {
             Swal.fire({

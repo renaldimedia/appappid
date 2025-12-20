@@ -2,7 +2,7 @@ import Swal from 'sweetalert2'
 import clarity from '../lib/clarity';
 export default function FastworkButton() {
     async function getContact() {
-                clarity.event("click-fastwork-button");
+                // clarity.event("click-fastwork-button");
 
         try {
             Swal.fire({

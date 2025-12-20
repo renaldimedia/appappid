@@ -5,7 +5,7 @@ export default function OrderButton({ label = "Pesan Sekarang", message = "Saya 
     const [loading, setLoading] = useState(false);
 
     async function getContact(messageToSend) {
-        clarity.event("click-order-button");
+        // clarity.event("click-order-button");
 
         try {
             setLoading(true);
