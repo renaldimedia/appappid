@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import clarity from "../lib/clarity";
 
 
-export default function WhatsappButton() {
+export default function WhatsappButton({label = "CONTACT ME"}) {
 
     async function getContact(type) {
         // clarity.event("click-whatsapp-button");
@@ -87,7 +87,7 @@ export default function WhatsappButton() {
             className="ml-4 flex items-start flex-col leading-none"
         >
             <span className="text-xs text-gray-600 mb-1"
-            >CONTACT ME</span
+            >{label}</span
             >
             <span className="title-font font-medium">Whatsapp</span>
         </span>

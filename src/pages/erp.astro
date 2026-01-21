@@ -38,15 +38,10 @@ import ComponentShow from "../components/TrackerComponent.jsx";
           </ul>
 
           <div class="mt-8 flex flex-wrap gap-4">
-            <a
-              href="https://wa.me/628xxxxxxxxx"
-              class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700"
-            >
-              Konsultasi WhatsApp
-            </a>
+            <WhatsappButton client:load label="Konsultasi Via" />
             <a
               href="#layanan"
-              class="border border-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100"
+              class="border border-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 flex items-center bg-primary text-white"
             >
               Lihat Layanan
             </a>
@@ -55,7 +50,7 @@ import ComponentShow from "../components/TrackerComponent.jsx";
 
         <div class="w-full">
           <img
-            src="https://placehold.co/600x400"
+            src="/erp.webp"
             alt="ERP Dashboard"
             class="rounded-xl shadow-lg w-full h-auto"
           />
@@ -105,9 +100,9 @@ import ComponentShow from "../components/TrackerComponent.jsx";
     <!-- SERVICES -->
     <section id="layanan" class="py-20">
       <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12">Layanan Kami</h2>
+        <h2 class="text-3xl font-bold text-center">Layanan Kami</h2>
 
-        <div class="grid md:grid-cols-2 gap-10">
+        <div class="grid md:grid-cols-2 gap-10 mt-12">
           <!-- SETUP -->
           <div class="border rounded-xl p-8">
             <h3 class="text-2xl font-bold mb-4">
@@ -179,11 +174,11 @@ import ComponentShow from "../components/TrackerComponent.jsx";
         <h2 class="text-3xl font-bold">Alur Kerja</h2>
 
         <div class="mt-12 grid md:grid-cols-5 gap-6 text-sm">
-          <div class="p-4 border rounded">Konsultasi</div>
-          <div class="p-4 border rounded">Analisa</div>
-          <div class="p-4 border rounded">Implementasi</div>
-          <div class="p-4 border rounded">Go-Live</div>
-          <div class="p-4 border rounded">Support / Managed</div>
+          <div class="p-4 border rounded flex flex-col"><span class="text-gray-500 text-2xl text-bold">1</span>Konsultasi</div>
+          <div class="p-4 border rounded flex flex-col"><span class="text-gray-500 text-2xl text-bold">2</span>Analisa</div>
+          <div class="p-4 border rounded flex flex-col"><span class="text-gray-500 text-2xl text-bold">3</span>Implementasi</div>
+          <div class="p-4 border rounded flex flex-col"><span class="text-gray-500 text-2xl text-bold">4</span>Go-Live</div>
+          <div class="p-4 border rounded flex flex-col"><span class="text-gray-500 text-2xl text-bold">5</span>Support / Managed</div>
         </div>
       </div>
     </section>
