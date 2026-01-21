@@ -18,793 +18,190 @@ import ComponentShow from "../components/TrackerComponent.jsx";
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<GoogleAnalytics id={import.meta.env.APPAPPID_GA} />
 	</head>
-	<body class="scroll-smooth">
-		<Header />
-		<section
-			class="text-gray-600 body-font py-12 shadow-lg"
-			style="background-image: url(/erp.webp);background-position: right center;background-repeat: no-repeat;background-size: 50%;background-color: #fffdff;"
-		>
-			<div
-				class="container mx-auto flex px-5 lg:py-18 py-12 md:flex-row flex-col items-center"
-			>
-				<div
-					class="lg:grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
-				>
-					<h1
-						class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"
-					>
-						Kami buatkan Anda Sistem ERP
-						<br class="hidden lg:inline-block" />yang <strong
-							>benar</strong
-						> cocok untuk bisnis Anda
-					</h1>
-					<p class="mb-8 leading-relaxed">
-						Optimalkan operasional perusahaan anda dengan sistem ERP
-						yang bisa diandalkan!
-					</p>
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-						<GotoButton
-							client:load
-							href="#features"
-							eventName="click-feature-button"
-							label="Ok, saya mau!"
-							className="text-center w-full inline-flex justify-center text-white bg-[#8B5CF6] border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg cursor-pointer"
-						/>
-						<GotoButton
-							client:load
-							href="#contact"
-							eventName="click-consultation-button"
-							label="Konsultasi Dulu"
-							className="text-center w-full inline-flex justify-center text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg cursor-pointer"
-						/>
-						<GotoButton
-							client:load
-							href="#pricing"
-							eventName="click-pricing-button"
-							label="Cek Harga"
-							className="inline-flex text-center w-full justify-center bg-[#483e97] text-white border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 hover:text-gray-600 rounded text-lg cursor-pointer"
-						/>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="text-gray-600 body-font">
-			<div class="container px-5 py-24 mx-auto">
-				<div class="flex flex-col">
-					<div class="h-1 bg-gray-200 rounded overflow-hidden">
-						<div class="w-24 h-full bg-indigo-500"></div>
-					</div>
-					<div class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
-						<h1
-							class="sm:w-2/5 text-gray-900 font-medium title-font text-2xl mb-2 sm:mb-0"
-						>
-							Preview Fitur ERP
-						</h1>
-						<p
-							class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0"
-						>
-							Beberapa preview fitur ERP dan banyak lagi
-						</p>
-					</div>
-				</div>
-				<div class="flex flex-wrap -mx-4 -mb-10 text-center">
-					<div class="sm:w-1/2 mb-10 px-4">
-						<div class="rounded-lg h-64 overflow-hidden">
-							<img
-								alt="content"
-								class="object-cover object-center h-full w-full mb-2"
-								src="/erpnext-pos2.png"
-							/>
-						</div>
-						<h2
-							class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3"
-						>
-							Point of Sale/Sistem Kasir
-						</h2>
-					</div>
-					<div class="sm:w-1/2 mb-10 px-4">
-						<div class="rounded-lg h-64 overflow-hidden">
-							<img
-								alt="content"
-								class="object-cover object-center h-full w-full"
-								src="/erp-manufacture.webp"
-							/>
-						</div>
-						<h2
-							class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3"
-						>
-							Manajemen Manufaktur
-						</h2>
-					</div>
-					<div class="sm:w-1/2 mb-10 px-4">
-						<div class="rounded-lg h-64 overflow-hidden">
-							<img
-								alt="content"
-								class="object-cover object-center h-full w-full"
-								src="/mobile-hris.webp"
-							/>
-						</div>
-						<h2
-							class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3"
-						>
-							Aplikasi Mobile untuk Sistem Manajemen Kariyawan/HRIS	
-						</h2>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="text-gray-600 body-font">
-			<div class="container px-5 lg:py-18 py-12 mx-auto">
-				<div class="text-center mb-20">
-					<h1
-						id="features"
-						class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4"
-					>
-						Apa aja yang bisa dilakukan oleh Sistem ERP?
-					</h1>
-					<p
-						class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s"
-					>
-						Fitur lengkap untuk segala operasional yang cocok di
-						segala bidang bisnis
-					</p>
-					<div class="flex mt-6 justify-center">
-						<div
-							class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"
-						>
-						</div>
-					</div>
-				</div>
-				<div
-					class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6"
-				>
-					<div
-						class="p-4 md:w-1/3 flex flex-col text-center items-center"
-					>
-						<div
-							class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="36"
-								height="36"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="lucide lucide-computer-icon lucide-computer"
-								><rect width="14" height="8" x="5" y="2" rx="2"
-								></rect><rect
-									width="20"
-									height="8"
-									x="2"
-									y="14"
-									rx="2"></rect><path d="M6 18h2"></path><path
-									d="M12 18h6"></path></svg
-							>
-						</div>
-						<div class="flex-grow">
-							<h2
-								class="text-gray-900 text-lg title-font font-medium mb-3"
-							>
-								POS(Point of Sales)
-							</h2>
-							<p class="leading-relaxed text-base">
-								Langsung bisa layani pelanggan di toko anda
-							</p>
-							<!-- <a
-								class="mt-3 text-indigo-500 inline-flex items-center"
-								>Learn More
-								<svg
-									fill="none"
-									stroke="currentColor"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									class="w-4 h-4 ml-2"
-									viewBox="0 0 24 24"
-								>
-									<path d="M5 12h14M12 5l7 7-7 7"></path>
-								</svg>
-							</a> -->
-						</div>
-					</div>
-					<div
-						class="p-4 md:w-1/3 flex flex-col text-center items-center"
-					>
-						<div
-							class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="36"
-								height="36"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="lucide lucide-factory-icon lucide-factory"
-								><path d="M12 16h.01"></path><path
-									d="M16 16h.01"></path><path
-									d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"
-								></path><path d="M8 16h.01"></path></svg
-							>
-						</div>
-						<div class="flex-grow">
-							<h2
-								class="text-gray-900 text-lg title-font font-medium mb-3"
-							>
-								Manufaktur<br />
-								&nbsp;
-							</h2>
-							<p class="leading-relaxed text-base">
-								Lacak dan Optimalkan proses
-								produksi/manufakturing di perusahaan anda
-							</p>
-							<!-- <a
-								class="mt-3 text-indigo-500 inline-flex items-center"
-								>Learn More
-								<svg
-									fill="none"
-									stroke="currentColor"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									class="w-4 h-4 ml-2"
-									viewBox="0 0 24 24"
-								>
-									<path d="M5 12h14M12 5l7 7-7 7"></path>
-								</svg>
-							</a> -->
-						</div>
-					</div>
-					<div
-						class="p-4 md:w-1/3 flex flex-col text-center items-center"
-					>
-						<div
-							class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="lucide lucide-book-user-icon lucide-book-user"
-								><path d="M15 13a3 3 0 1 0-6 0"></path><path
-									d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"
-								></path><circle cx="12" cy="8" r="2"
-								></circle></svg
-							>
-						</div>
-						<div class="flex-grow">
-							<h2
-								class="text-gray-900 text-lg title-font font-medium mb-3"
-							>
-								CRM<br />
-								&nbsp;
-							</h2>
-							<p class="leading-relaxed text-base">
-								Dapatkan leads/pelanggan baru(dan yang lama)
-							</p>
-							<!-- <a
-								class="mt-3 text-indigo-500 inline-flex items-center"
-								>Learn More
-							</a> -->
-						</div>
-					</div>
-					<div
-						class="p-4 md:w-1/3 flex flex-col text-center items-center"
-					>
-						<div
-							class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="36"
-								height="36"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="lucide lucide-building2-icon lucide-building-2"
-								><path d="M10 12h4"></path><path d="M10 8h4"
-								></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"
-								></path><path
-									d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"
-								></path><path
-									d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"
-								></path></svg
-							>
-						</div>
-						<div class="flex-grow">
-							<h2
-								class="text-gray-900 text-lg title-font font-medium mb-3"
-							>
-								Manajemen HR, Payroll dan lainnya
-							</h2>
-							<p class="leading-relaxed text-base">
-								Manajemen internal perusahaan dan karyawan
-							</p>
-							<!-- <a
-								class="mt-3 text-indigo-500 inline-flex items-center"
-								>Learn More
-							</a> -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="text-gray-600 body-font">
-			<div class="container px-5 lg:py-18 py-12 mx-auto">
-				<div class="text-center mb-20">
-					<h1
-						id="features"
-						class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4"
-					>
-						Layanan Kami
-					</h1>
-					<p
-						class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s"
-					>
-						Apa yang kami tawarkan dengan sistem ERP ini?
-					</p>
-					<div class="flex mt-6 justify-center">
-						<div
-							class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"
-						>
-						</div>
-					</div>
-				</div>
-				<div
-					class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6"
-				>
-					<div
-						class="p-4 md:w-1/3 flex flex-col text-center items-center"
-					>
-						<div
-							class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="36"
-								height="36"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="lucide lucide-list-checks-icon lucide-list-checks"
-								><path d="M13 5h8"></path><path d="M13 12h8"
-								></path><path d="M13 19h8"></path><path
-									d="m3 17 2 2 4-4"></path><path
-									d="m3 7 2 2 4-4"></path></svg
-							>
-						</div>
-						<div class="flex-grow">
-							<h2
-								class="text-gray-900 text-lg title-font font-medium mb-3"
-							>
-								1 Harga untu semua fitur, Lengkap!
-							</h2>
-							<p class="leading-relaxed text-base">
-								Fitur sangat lengkap untuk segala managemen
-								perusahaan anda!
-							</p>
-							<!-- <a
-								class="mt-3 text-indigo-500 inline-flex items-center"
-								>Learn More
-								<svg
-									fill="none"
-									stroke="currentColor"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									class="w-4 h-4 ml-2"
-									viewBox="0 0 24 24"
-								>
-									<path d="M5 12h14M12 5l7 7-7 7"></path>
-								</svg>
-							</a> -->
-						</div>
-					</div>
-					<div
-						class="p-4 md:w-1/3 flex flex-col text-center items-center"
-					>
-						<div
-							class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="36"
-								height="36"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="lucide lucide-refresh-ccw-dot-icon lucide-refresh-ccw-dot"
-								><path
-									d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
-								></path><path d="M3 3v5h5"></path><path
-									d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"
-								></path><path d="M16 16h5v5"></path><circle
-									cx="12"
-									cy="12"
-									r="1"></circle></svg
-							>
-						</div>
-						<div class="flex-grow">
-							<h2
-								class="text-gray-900 text-lg title-font font-medium mb-3"
-							>
-								Installasi sistem dan server
-							</h2>
-							<p class="leading-relaxed text-base">
-								Saya install dari awal install server sampai
-								sistemnya
-							</p>
-							<!-- <a
-								class="mt-3 text-indigo-500 inline-flex items-center"
-								>Learn More
-								<svg
-									fill="none"
-									stroke="currentColor"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									class="w-4 h-4 ml-2"
-									viewBox="0 0 24 24"
-								>
-									<path d="M5 12h14M12 5l7 7-7 7"></path>
-								</svg>
-							</a> -->
-						</div>
-					</div>
+	<body class="bg-white text-gray-800">
+	<Header />
+    <!-- HERO -->
+    <section class="bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+            Implementasi ERPNext untuk UKM & Bisnis Berkembang
+          </h1>
+          <p class="mt-6 text-lg text-gray-600">
+            Setup rapi, mudah dipakai, dan bisa berkembang seiring bisnis Anda.
+          </p>
 
-					<div
-						class="p-4 md:w-1/3 flex flex-col text-center items-center"
-					>
-						<div
-							class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="36"
-								height="36"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="lucide lucide-wrench-icon lucide-wrench"
-								><path
-									d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"
-								></path></svg
-							>
-						</div>
-						<div class="flex-grow">
-							<h2
-								class="text-gray-900 text-lg title-font font-medium mb-3"
-							>
-								Pemeliharaan Sistem
-							</h2>
-							<p class="leading-relaxed text-base">
-								Kami bantu dalam pemeliharaan sistem juga
-							</p>
-							<!-- <a
-								class="mt-3 text-indigo-500 inline-flex items-center"
-								>Learn More
-								<svg
-									fill="none"
-									stroke="currentColor"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									class="w-4 h-4 ml-2"
-									viewBox="0 0 24 24"
-								>
-									<path d="M5 12h14M12 5l7 7-7 7"></path>
-								</svg>
-							</a> -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="text-gray-600 body-font overflow-hidden">
-			<div class="container px-5 lg:py-18 py-12 mx-auto">
-				<div class="flex flex-col text-center w-full mb-20">
-					<h1
-						id="pricing"
-						class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900"
-					>
-						Pricing
-					</h1>
-					<p
-						class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-500"
-					>
-						Harga Sistem ERP ini?
-					</p>
-				</div>
-				<div class="flex flex-wrap -m-4 text-lg mb-8">
-					<div class="p-4 xl:w-1/3 md:w-1/2 w-full">
-						<div
-							class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden"
-						>
-							<span
-								class="bg-indigo-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl"
-								>POPULAR</span
-							>
-							<h2
-								class="text-sm tracking-widest title-font mb-1 font-medium"
-							>
-								STANDAR
-							</h2>
-							<small class="italic">Mulai dari</small>
-							<h1
-								class="text-5xl text-gray-900 leading-none pb-4 mb-4 border-b border-gray-200"
-							>
-								<span>Rp2Jt</span>
-								<span
-									class="text-lg ml-1 font-normal text-gray-500"
-									>/tahun</span
-								>
-							</h1>
-							<p
-								class="flex items-center text-gray-600 mb-2 leading-6"
-							>
-								<span
-									class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-green-400 text-white rounded-full flex-shrink-0"
-								>
-									<svg
-										fill="none"
-										stroke="currentColor"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2.5"
-										class="w-3 h-3"
-										viewBox="0 0 24 24"
-									>
-										<path d="M20 6L9 17l-5-5"></path>
-									</svg>
-								</span>Semua fitur ERP Lengkap!
-							</p>
-							<p
-								class="flex items-center text-gray-600 mb-2 leading-6"
-							>
-								<span
-									class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-green-400 text-white rounded-full flex-shrink-0"
-								>
-									<svg
-										fill="none"
-										stroke="currentColor"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2.5"
-										class="w-3 h-3"
-										viewBox="0 0 24 24"
-									>
-										<path d="M20 6L9 17l-5-5"></path>
-									</svg>
-								</span>Free Jasa Installasi Server
-							</p>
-							<p
-								class="flex items-center text-gray-600 mb-2 leading-6"
-							>
-								<span
-									class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-green-400 text-white rounded-full flex-shrink-0"
-								>
-									<svg
-										fill="none"
-										stroke="currentColor"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2.5"
-										class="w-3 h-3"
-										viewBox="0 0 24 24"
-									>
-										<path d="M20 6L9 17l-5-5"></path>
-									</svg>
-								</span>Free Jasa Maintenance selama kontrak
-							</p>
-							<p class="flex items-center text-gray-600 mb-6">
-								<span
-									class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-green-400 text-white rounded-full flex-shrink-0"
-								>
-									<svg
-										fill="none"
-										stroke="currentColor"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2.5"
-										class="w-3 h-3"
-										viewBox="0 0 24 24"
-									>
-										<path d="M20 6L9 17l-5-5"></path>
-									</svg>
-								</span>Unlimited User, Produk, Company
-							</p>
+          <ul class="mt-6 space-y-2 text-gray-700">
+            <li>✔ Distribusi, manufaktur ringan, retail</li>
+            <li>✔ Open-source (tanpa lisensi mahal)</li>
+            <li>✔ Bisa setup sekali atau dikelola penuh</li>
+          </ul>
 
-							<OrderButton
-								client:load
-								label="Pesan Sekarang!"
-								message="Hai! saya tertarik dengan ERP Standar untuk bisnis saya!"
-							/>
-						</div>
-					</div>
-					<div class="p-4 xl:w-1/3 md:w-1/2 w-full">
-						<div
-							class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden"
-						>
-							<h2
-								class="text-sm tracking-widest title-font mb-1 font-medium"
-							>
-								HOSTING SENDIRI
-							</h2>
-							<small class="italic">Mulai dari</small>
-							<h1
-								class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200"
-							>
-								<span class="italic">Call for Price</span>
-							</h1>
-							<p
-								class="flex items-center text-gray-600 mb-2 leading-6"
-							>
-								<span
-									class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-green-400 text-white rounded-full flex-shrink-0"
-								>
-									<svg
-										fill="none"
-										stroke="currentColor"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2.5"
-										class="w-3 h-3"
-										viewBox="0 0 24 24"
-									>
-										<path d="M20 6L9 17l-5-5"></path>
-									</svg>
-								</span>Semua fitur ERP Lengkap!
-							</p>
-							<p
-								class="flex items-center text-gray-600 mb-2 leading-6"
-							>
-								<span
-									class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-red-400 text-white rounded-full flex-shrink-0"
-								>
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										class="w-3 h-3"
-										viewBox="0 0 24 24"
-										fill="none"
-										stroke="currentColor"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										class="lucide lucide-x-icon lucide-x"
-										><path d="M18 6 6 18"></path><path
-											d="m6 6 12 12"></path></svg
-									>
-								</span>Free Jasa Installasi Server
-							</p>
-							<p
-								class="flex items-center text-gray-600 mb-2 leading-6"
-							>
-								<span
-									class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-red-400 text-white rounded-full flex-shrink-0"
-								>
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										class="w-3 h-3"
-										viewBox="0 0 24 24"
-										fill="none"
-										stroke="currentColor"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										class="lucide lucide-x-icon lucide-x"
-										><path d="M18 6 6 18"></path><path
-											d="m6 6 12 12"></path></svg
-									>
-								</span>Free Jasa Maintenance
-							</p>
-							<p class="flex items-center text-gray-600 mb-6">
-								<span
-									class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-green-400 text-white rounded-full flex-shrink-0"
-								>
-									<svg
-										fill="none"
-										stroke="currentColor"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2.5"
-										class="w-3 h-3"
-										viewBox="0 0 24 24"
-									>
-										<path d="M20 6L9 17l-5-5"></path>
-									</svg>
-								</span>Unlimited User, Produk, Company
-							</p>
-							<OrderButton
-								client:load
-								label="Pesan Sekarang!"
-								message="Hai! saya tertarik dengan self hosted ERP untuk bisnis saya!"
-							/>
-						</div>
-					</div>
-					<div class="w-full p-4">
-						<ul class="list-disc leading-2">
-							<li class="list-disc m-0">
-								<p class="text-sm m-0">
-									Harga di paket standar termasuk free
-									maintenance selama kontrak
-								</p>
-							</li>
-							<li class="list-disc">
-								<p class="text-sm m-0">
-									Untuk paket HOSTING SENDIRI, anda tiadk
-									mendapatkan maintenance dan support penuh
-								</p>
-							</li>
-							<li class="list-disc">
-								<p class="text-sm m-0">
-									User, Produk, dll anda bisa menambahkan
-									sampai tidak terbatas, batasannya adalah
-									perangkat server yang anda punya, jadi
-									pastikan servernya bagus
-								</p>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="flex flex-col"></div>
-			</div>
-		</section>
-		<ComponentShow eventName="view-consultation-section" client:load>
-			<section class="body-font bg-[#a467c1]">
-				<div
-					class="container px-5 lg:py-18 py-12 mx-auto flex items-center md:flex-row flex-col"
-				>
-					<div
-						class="flex flex-col md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto md:text-left text-center text-white"
-					>
-						<h2
-							id="contact"
-							class="text-4xl text-white tracking-widest font-medium title-font mb-1"
-						>
-							KONSULTASI DULU?
-						</h2>
-						<h1
-							class="text-2xl font-medium title-font text-gray-900"
-						>
-							Silahkan! Gratis kok
-						</h1>
-					</div>
-					<div
-						class="flex md:ml-auto md:mr-0 mx-auto items-center flex-col md:flex-row space-x-4 gap-4 flex-wrap"
-					>
-						<WhatsappButton client:load />
-						<EmailButton client:load />
-						<FastworkButton client:load />
-					</div>
-				</div>
-			</section>
-		</ComponentShow>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              href="https://wa.me/628xxxxxxxxx"
+              class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700"
+            >
+              Konsultasi WhatsApp
+            </a>
+            <a
+              href="#layanan"
+              class="border border-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100"
+            >
+              Lihat Layanan
+            </a>
+          </div>
+        </div>
 
-		<Footer />
-	</body>
+        <div class="w-full">
+          <img
+            src="https://placehold.co/600x400"
+            alt="ERP Dashboard"
+            class="rounded-xl shadow-lg w-full h-auto"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="py-20">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold">Masalah yang Sering Terjadi</h2>
+        <p class="mt-4 text-gray-600">
+          Banyak bisnis gagal pakai ERP bukan karena sistemnya, tapi karena implementasinya.
+        </p>
+
+        <div class="mt-12 grid md:grid-cols-4 gap-6 text-md text-left">
+          <div class="p-6 border border-gray-100 rounded-lg flex justify-center items-center shadow-lg gap-4 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x text-red-500"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+			Stok tidak akurat
+          </div>
+           <div class="p-6 border border-gray-100 rounded-lg flex justify-center items-center shadow-lg gap-4 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x text-red-500"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            Masih Excel & manual
+          </div>
+           <div class="p-6 border border-gray-100 rounded-lg flex justify-center items-center shadow-lg gap-4 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x text-red-500"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            ERP terlalu rumit
+          </div>
+           <div class="p-6 border border-gray-100 rounded-lg flex justify-center items-center shadow-lg gap-4 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x text-red-500"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            Tidak ada support
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="bg-gray-50 py-20">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold">Solusi Kami</h2>
+        <p class="mt-4 text-gray-600">
+          ERPNext yang disesuaikan dengan proses bisnis, bukan sebaliknya.
+        </p>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="layanan" class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Layanan Kami</h2>
+
+        <div class="grid md:grid-cols-2 gap-10">
+          <!-- SETUP -->
+          <div class="border rounded-xl p-8">
+            <h3 class="text-2xl font-bold mb-4">
+              Setup & Konfigurasi ERPNext
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Implementasi sekali jalan, tanpa support lanjutan.
+            </p>
+
+            <ul class="space-y-2 mb-6">
+              <li>✔ Install ERPNext</li>
+              <li>✔ Setup company, user, role</li>
+              <li>✔ Accounting, Stock, Sales, Purchase</li>
+              <li>✔ Import master data</li>
+              <li>✔ Knowledge transfer singkat</li>
+            </ul>
+
+            <p class="text-sm text-gray-500 mb-6">
+              Tidak termasuk support & perubahan setelah go-live.
+            </p>
+
+            <OrderButton
+				client:load
+				label="Pilih Jasa Setup Aja"
+				message="Hai! saya tertarik dengan unmanaged ERP untuk bisnis saya!"
+			/>
+          </div>
+
+          <!-- MANAGED -->
+          <div class="border-2 border-green-600 rounded-xl p-8 relative">
+            <span
+              class="absolute -top-3 right-4 bg-green-600 text-white text-sm px-3 py-1 rounded-full"
+            >
+              Rekomendasi
+            </span>
+
+            <h3 class="text-2xl font-bold mb-4">
+              Managed ERPNext
+            </h3>
+            <p class="text-gray-600 mb-6">
+              ERPNext dikelola penuh + free support & penyesuaian.
+            </p>
+
+            <ul class="space-y-2 mb-6">
+              <li>✔ Hosting & maintenance</li>
+              <li>✔ Backup & monitoring</li>
+              <li>✔ Free support selama berlangganan</li>
+              <li>✔ Penyesuaian konfigurasi</li>
+              <li>✔ Konsultasi proses bisnis</li>
+            </ul>
+
+            <p class="text-sm text-gray-500 mb-6">
+              Sistem akan terus disesuaikan selama layanan aktif.
+            </p>
+			<OrderButton
+				client:load
+				label="Pilih Managed ERP System"
+				message="Hai! saya tertarik dengan managed ERP untuk bisnis saya!"
+			/>
+           
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOW -->
+    <section class="bg-gray-50 py-20">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold">Alur Kerja</h2>
+
+        <div class="mt-12 grid md:grid-cols-5 gap-6 text-sm">
+          <div class="p-4 border rounded">Konsultasi</div>
+          <div class="p-4 border rounded">Analisa</div>
+          <div class="p-4 border rounded">Implementasi</div>
+          <div class="p-4 border rounded">Go-Live</div>
+          <div class="p-4 border rounded">Support / Managed</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold">
+          Tidak Yakin Mulai dari Mana?
+        </h2>
+        <p class="mt-4 text-gray-600">
+          Konsultasi gratis, tanpa komitmen.
+        </p>
+
+        <WhatsappButton client:load label="Konsultasi Via WhatsApp" />
+      </div>
+    </section>
+
+    <Footer />
+  </body>
 </html>
