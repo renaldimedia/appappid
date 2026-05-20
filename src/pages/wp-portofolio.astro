@@ -1,0 +1,265 @@
+Tentu, ini adalah satu file komponen Astro (`.astro`) yang merangkum keempat proyek dari dokumen Anda dengan desain modern berwarna dasar jingga (orange). File ini sudah mencakup HTML dan CSS bawaan yang responsif, sehingga Anda bisa langsung memasukkannya ke dalam proyek AstroJS Anda (misalnya sebagai `src/pages/portfolio.astro` atau sebagai komponen).
+
+Data proyek telah disesuaikan dengan detail teknologi dan fitur yang ada pada dokumen, serta dirancang agar siap pakai.
+
+```astro
+---
+// Portofolio.astro
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<GoogleAnalytics id={import.meta.env.APPAPPID_GA} />
+	</head>
+    <body class="scroll-smooth">
+    <Header />
+    <main class="portfolio-container">
+      <header class="hero">
+        <div class="hero-content">
+          <h1 class="name">Ardi Renaldi</h1>
+          <p class="title">Full-stack Developer</p>
+          <div class="divider"></div>
+          <p class="subtitle">Koleksi Proyek dan Pengalaman Pengembangan Web</p>
+        </div>
+      </header>
+
+      <section class="projects-grid">
+        
+        <article class="project-card">
+          <div class="card-header">
+            [cite_start]<h2>Blmofficial.id SPA App [cite: 1]</h2>
+            [cite_start]<span class="badge">Desember 2025 - April 2026 [cite: 2]</span>
+          </div>
+          <div class="card-body">
+            [cite_start]<p class="tech"><strong>Tech Stack:</strong> Wordpress/Woocommerce [cite: 3]</p>
+            <h3>Fitur Utama:</h3>
+            <ul>
+              [cite_start]<li>Integrasi dengan Sukha by Mandiri Platform [cite: 7]</li>
+              [cite_start]<li>Integrasi dengan Mandiri Payment (Virtual Account) [cite: 8]</li>
+              [cite_start]<li>Custom Plugin di Wordpress/Woocommerce untuk custom flow [cite: 9]</li>
+              [cite_start]<li>Integrasi dengan Paxel Shipping [cite: 11]</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="card-header">
+            [cite_start]<h2>Web Universitas Siliwangi Tasikmalaya - Fakultas Ilmu Kesehatan [cite: 28]</h2>
+            [cite_start]<span class="badge">Desember 2025 - April 2026 [cite: 29]</span>
+          </div>
+          <div class="card-body">
+            [cite_start]<p class="tech"><strong>Tech Stack:</strong> Wordpress [cite: 30]</p>
+            <h3>Fitur Utama:</h3>
+            <ul>
+              [cite_start]<li>Buat theme full FSE (untuk Gutenberg editor) [cite: 33]</li>
+              [cite_start]<li>Buat custom blocks dengan custom functionality seperti datatable serverside, gallery custom with pagination [cite: 34]</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="card-header">
+            [cite_start]<h2>Web Store Lavenka (lavenkagrosir.com) [cite: 46]</h2>
+            [cite_start]<span class="badge">November 2025 - April 2026 [cite: 47]</span>
+          </div>
+          <div class="card-body">
+            [cite_start]<p class="tech"><strong>Tech Stack:</strong> Wordpress/Woocommerce [cite: 48]</p>
+            <h3>Fitur Utama:</h3>
+            <ul>
+              [cite_start]<li>Custom flow order, jadi ada 2 flow bisa order ke whatsapp Ketika customer belanja dengan jumlah tertentu, bisa ke order web juga [cite: 51]</li>
+              [cite_start]<li>Integrate dengan payment gateway midtrans [cite: 51]</li>
+              [cite_start]<li>Custom complex pricing [cite: 52]</li>
+              [cite_start]<li>Customize user/customer page [cite: 53]</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="card-header">
+            [cite_start]<h2>Web Voksradio(New) [cite: 74]</h2>
+            [cite_start]<span class="badge">April 2026 [cite: 75]</span>
+          </div>
+          <div class="card-body">
+            [cite_start]<p class="tech"><strong>Tech Stack:</strong> Wordpress [cite: 76]</p>
+            <h3>Fitur Utama:</h3>
+            <ul>
+              [cite_start]<li>Remake Ul dengan desain minimalis [cite: 79]</li>
+              [cite_start]<li>Integrasi dengan API spotify, youtube dan IG untuk latest konten [cite: 80]</li>
+            </ul>
+          </div>
+        </article>
+
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  :root {
+    --primary-orange: #f97316; /* Tailwind Orange-500 */
+    --primary-orange-hover: #ea580c; /* Tailwind Orange-600 */
+    --bg-light: #f8fafc;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --card-bg: #ffffff;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  .portfolio-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+  }
+
+  .name {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-orange);
+    margin-bottom: 1.5rem;
+  }
+
+  .divider {
+    height: 4px;
+    width: 60px;
+    background-color: var(--primary-orange);
+    margin: 0 auto 1.5rem auto;
+    border-radius: 2px;
+  }
+
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+
+  /* Projects Grid */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  /* Project Card */
+  .project-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--primary-orange);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .card-header {
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .card-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+  }
+
+  .badge {
+    display: inline-block;
+    background-color: #fff7ed;
+    color: var(--primary-orange-hover);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid #fdba74;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .tech {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    background-color: #f1f5f9;
+    padding: 0.5rem;
+    border-radius: 6px;
+  }
+
+  .card-body h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+  }
+
+  .card-body ul {
+    list-style-type: none;
+  }
+
+  .card-body ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  .card-body ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-orange);
+    font-weight: bold;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+</style>
+
+```
