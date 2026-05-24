@@ -35,7 +35,7 @@ export default function OrderButton({ label = "Pesan Sekarang", message = "Saya 
 
     return (<button
         onClick={() => getContact(message)}
-        className={`cursor-pointer flex items-center mt-auto text-white bg-primary border-0 py-2 px-4 w-full focus:outline-none rounded ${loading ? "opacity-70 pointer-events-none" : "hover:bg-gray-500"
+        className={`cursor-pointer flex items-center justify-center mt-auto text-white bg-primary border-0 py-2 px-4 w-full focus:outline-none rounded ${loading ? "opacity-70 pointer-events-none" : "hover:bg-gray-500"
             }`}
         disabled={loading}
         title={label}
